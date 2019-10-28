@@ -27,11 +27,11 @@ app.use((req, res, next) => {
 
 app.use("/api/v1", webpay_routes);
 
-app.use(express.static(__dirname + '../../dist/client'));
+app.use(express.static(__dirname + '../../dist/webpay'));
 
 // Send all requests to index.html
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '../../dist/client/index.html'));
+  res.sendFile(path.join(__dirname + '../../dist/webpay/index.html'));
 });
 
 module.exports = app;
