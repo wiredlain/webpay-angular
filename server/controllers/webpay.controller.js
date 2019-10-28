@@ -12,7 +12,7 @@ var wp = new WebPay({
 var transaction;
 var transactions = {};
 var transactionsByToken = {};
-var url = 'http://localhost:3410';
+var url = 'https://angular-webpay.herokuapp.com';
 
 function pagar(req, res){
      transactions = {};
