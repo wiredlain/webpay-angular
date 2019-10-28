@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "node server/app.js",
-    "postinstall": "npm run config:prod && ng build --aot --prod",
-    "heroku-postbuild": "npm run config:prod && ng build",
+    "postinstall": "npm run && ng build --aot --prod",
+    "heroku-postbuild": "npm run && ng build",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
