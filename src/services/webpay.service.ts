@@ -43,7 +43,7 @@ export class WebPayService {
         let headers = new Headers({
             'Content-Type': 'application/json'
         })
-       return this._http.post('http://localhost:3410/api/v1/pagar', params, {headers:headers})
+       return this._http.post(`${environment.ws_url}/api/v1/pagar`, params, {headers:headers})
        .pipe(
            map(res => res.json())
        );
