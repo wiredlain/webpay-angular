@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ws_url : 'https://angular-webpay.herokuapp.com/'
+  ws_url : 'https://angular-webpay.herokuapp.com'
 
 };
 
