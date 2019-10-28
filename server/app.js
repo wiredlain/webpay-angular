@@ -31,7 +31,8 @@ app.use(express.static(__dirname + '../../dist/webpay'));
 
 // Send all requests to index.html
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '../../dist/webpay/index.html'));
+	if (req.url === '/api/v1*') return next();
+  	res.sendFile(path.join(__dirname + '../../dist/webpay/index.html'));
 });
 
 module.exports = app;
