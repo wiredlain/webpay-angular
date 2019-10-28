@@ -7,7 +7,7 @@ var app = express();
 var http = require('http');
 var server = http.createServer(app);
 SocketSingleton.configure(server); // <--here
-server.listen('3000');
+server.listen(process.env.PORT || 3000);
 var webpay_routes = require("./routes/webpay.route");
 
 
@@ -25,5 +25,12 @@ app.use((req, res, next) => {
 
 
 app.use("/api/v1", webpay_routes);
+
+app.use(express.static(__dirname + '../../dist/client'));
+
+// Send all requests to index.html
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname + '../../dist/client/index.html'));
+});
 
 module.exports = app;
